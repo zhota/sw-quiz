@@ -82,13 +82,26 @@ button {
   to {transform:rotate(360deg);}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1600px) {
   .Planet-name {
     font-size: 24px;
   }
 
   .Planet-info {
-    font-size: 18px;
-    min-height: 257px;
+    font-size: 16px;
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Planet-name {
+    font-size: 20px;
+    padding: 18px 20px;
+  }
+
+  .Planet-info {
+    font-size: 14px;
+    min-height: 230px;
+    padding: 10px 20px;
   }
 }

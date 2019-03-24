@@ -52,7 +52,7 @@ class App extends Component {
           <div className="Loading">
           <img src={Logo} alt="loading-img" />
           <h1>Loading...</h1>
-          <i class="spin fas fa-spinner"></i>
+          <i className="spin fas fa-spinner"></i>
           </div>
         </div>
       ) 
