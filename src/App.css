@@ -1,5 +1,5 @@
 .App {
-  max-width: 40rem;
+  max-width: 640px;
   margin: 0 auto;
   padding: 6% 0;
 }
@@ -21,7 +21,7 @@ button {
   cursor: pointer;
   font-size: 28px;
   margin-top: 20px;
-  padding: 3vh 0;
+  padding: 28px 0;
   width: 100%;
   text-transform: uppercase;
 }
@@ -32,7 +32,7 @@ button {
   border-bottom: none;
   border-radius: 15px 15px 0 0;
   font-size: 32px;
-  padding: 3vh 5vh;  
+  padding: 28px 47px;  
   -webkit-text-stroke: 1px black;
   color: white;
   text-shadow:
@@ -49,13 +49,13 @@ button {
   border-radius: 0 0 15px 15px;
   color: #000;
   font-size: 18px;
-  min-height: 25vh;
-  padding: 5vh 5vh;
+  min-height: 234px;
+  padding: 47px;
 }
 
 .Loading {
   text-align: center;
-  padding: 5vh 0;
+  padding: 47px 0;
 }
 
 .Loading img {
@@ -89,6 +89,6 @@ button {
 
   .Planet-info {
     font-size: 18px;
-    min-height: 35vh;
+    min-height: 257px;
   }
 }

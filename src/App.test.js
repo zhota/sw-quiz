@@ -12,6 +12,6 @@ it('renders without crashing', () => {
 
 test('Loading is being rendered on start', () => {
   const wrapper = shallow(<App />);
-  const loading = <div className="Loading"></div>;
+  const loading = <h1>Loading...</h1>;
   expect(wrapper.contains(loading)).toEqual(true);
 });

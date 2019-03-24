@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PlanetInfo from './components/PlanetInfo';
 import NewPlanet from './components/NewPlanet';
-import { swApi } from './actions/SWApi';
+import { swApi } from './actions/SwApi';
 import Logo from './images/star-wars-quiz-logo.jpg';
 import './App.css';
 
