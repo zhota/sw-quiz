@@ -1,7 +1,7 @@
-export const swApi = () => {
-    const apiUrl = "https://swapi.co/api/planets";
-
-    return fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => console.log(data));
+export const swApi = (planetId) => {
+    const apiUrl = "https://swapi.co/api/planets/" + planetId.toString();
+    //const apiUrl = "https://linkquebrado.co/" + planetId.toString();
+    
+    return fetch(apiUrl, {mode: 'cors'})
+        .then(response => response.json());
 };
