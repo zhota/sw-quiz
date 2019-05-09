@@ -103,7 +103,7 @@ class App extends Component {
           <i className="spin fas fa-spinner"></i>
           </div>
         </div>
-      ) 
+      )
     } 
     
     return (

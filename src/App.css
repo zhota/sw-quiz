@@ -2,12 +2,15 @@
   max-width: 640px;
   margin: 0 auto;
   padding: 6% 0;
+  position: relative;
+  top: 50%;
 }
 
 body {
   background-image:url(./images/star-wars-sky-background-1.jpg);
   font-family: Arial, Helvetica, sans-serif;
   color: #fff;
+  min-height: 100%;
 }
 
 .Button {
@@ -24,6 +27,10 @@ button {
   padding: 28px 0;
   width: 100%;
   text-transform: uppercase;
+}
+
+html {
+  height: 100%;
 }
 
 .Planet-name {
@@ -60,6 +67,10 @@ button {
 
 .Loading img {
   width: 200px;
+}
+
+#root {
+  min-height: 100%;
 }
 
 .spin {
