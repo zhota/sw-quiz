@@ -24,35 +24,45 @@ class App extends Component {
 
   randomizePlanet = () =>{
     this.setState({planet: null});
-    const planetCount = 3;
+    const planetCount = 61;
     let planetId = Math.ceil(Math.random() * planetCount);
-    const blackList = this.state.blackList;
-    this.setState({
-      blackList: blackList.concat(planetId)
-    }, () => console.log(this.state.blackList));
-    // adiciono o planetId atual no array de repetição
-    // passo o array como parametro para a função que chama o fetch
     return this.fetchPlanet(planetId, planetCount);
   }    
 
   fetchPlanet = (planetId, planetCount) => {
     if(this.state.blackList.includes(planetId)){
       return this.randomizePlanet();
-    } else if(this.state.blackList.length === planetCount - 1){
-      return this.gameOver();
-    } else {
-        return swApi(planetId)
-        .then(data => this.setState({planet: data}))
-        .catch(err => {
-        console.log("Erro no fetch", err);
-        this.setState({ error: true });
-    });
     }
-    // faço um if que checa se o array já possui o valor que o planetId recebeu
-    // Se true, retorna função randomizePlanet novamente, usando como parametro o randomNum
-    // Se false, retorna a função swApi passando como parâmetro o planetId
-    
+    if(this.state.blackList.length === planetCount - 1){
+      return this.gameOver();
+    }
+    const blackList = this.state.blackList;
+    this.setState({
+      blackList: blackList.concat(planetId)
+    }, () => {
+      console.log(this.state.blackList);
+    });
+    return swApi(planetId)
+      .then(data => {
+        if(!this.isValidPlanet(data)) {
+          return this.randomizePlanet();
+        } 
+        this.setState({planet: data})
+      })
+      .catch(err => {
+      console.log("Erro no fetch", err);
+      this.setState({ error: true });
+    });
   }
+
+  isValidPlanet = data => {
+    console.log(data);
+    if(data.population === 'unknown' || data.name === 'unknown' || data.climate === 'unknown' || data.terrain === 'unknown'){
+      return false;
+    }
+    return true;
+  }
+
   gameOver = () => {
     console.log("Encerrando...");
     return this.setState({endGame: true});
